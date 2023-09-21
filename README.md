@@ -159,7 +159,6 @@ else:
 ```
 
 
-
 ```
 edad: int = 18
 
@@ -199,8 +198,6 @@ operaciones = [suma,resta, multiplicacion, division]
 ```
 
 
-
-
 ```
 #Lista
 
@@ -210,8 +207,6 @@ def suma(a,b):
 print(suma(3,4))
 #Retorna None
 ```
-
-
 
 
 ```
@@ -225,14 +220,10 @@ print(w)
 ```
 
 
-
-
 ```
 res_suma._._._ = operaciones(5,4)
 res_suma
 ```
-
-
 
 
 ```
@@ -243,8 +234,6 @@ print(tupla_funciones[0](5,4))
 
 tupla = [1,2,4,5,True,4,5,"Hola",[1,2,3]]
 ```
-
-
 
 
 ```
@@ -267,8 +256,6 @@ print(a,b)
 ```
 
 
-
-
 ```
 #range
 #Permite crear un iterable desde 0 hasta -1
@@ -279,45 +266,139 @@ range(0,10)
 ```
 
 
-
-
 ```
 for i in numeros:
     print(i, end= " ")
 ```
 
+
+```
+numeros = range(5,10)
+numeros
+```
+
+
+```
+for i in numeros:
+    print(i,end=" ")
+```
+
+
+```
+numeros_pares = range(2,11,2)
+for par in pares:
+    print(par,end=" ")
+```
+
+
+```
+for item in range(2,11,2):
+    print(item, end=" ")
+```
+
+
+```
+list(numeros)
+```
+
+
+```
+numeros = list(numeros)
+```
+
+
+```
+lista = [3,6,7,48,34, 67, 89]
+max(lista)
+```
+
+
+```
+lista = [3,6,7,48,34, 67, 89]
+min(lista)
+```
+
+
+```
+sum(lista)
+```
+
+
+```
+sorted(lista)
+```
+
+
+```
+lista = [3,6,7,48,34, 67, 89]
+```
+
+
+```
+lista.sort()
+```
+
+
+```
+print(lista.sort())
 ```
 
 ```
+lista.sort(reverse-True)
+lista
+```
+
+
+```
+# Set conjuntos
+
+mi_set = [1,2,3,3,3,3]
+mi_set
+```
+
+
+```
+data= [15,14,13,1,2,3,4,5,6,7,8,9,1,2,1,2,1]
+
+list(set(data))
+```
+
+
+```
+data2 = [1,56,57,58]
+
+mi_set.union(data2)
 
 ```
 
-```
 
 ```
+#Diccionarios
 
+mi_dictionary = [ "Llave": "valor" ]
+mi_dictionary["llave"]
 ```
 
-```
+
 
 ```
-
+mi_dictionary.keys()
 ```
 
-```
 
 ```
-
+mi_dictionary.values(['valor'])
 ```
 
-```
 
 ```
+for e in mi_set:
+    print(e)
+
+for key in days_of_the_week.keys():
+    print(key,end=" ")
 
 ```
-
-```
-
 
 
 
