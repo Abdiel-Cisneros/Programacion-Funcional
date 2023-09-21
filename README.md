@@ -402,7 +402,125 @@ for key in days_of_the_week.keys():
 
 ```
 
+### ----08/09/2023----
 
+En una carpeta llamada Milibreria se encuentran 2 archivos
+
+#### resta.py
+```
+def resta (a:int, b:int) ->int:
+    return a - b
+```
+
+#### suma.py
+
+```
+def suma(a: int ,b: int) ->int:
+    return a + b
+
+
+def suma2(a:float, b:float)-> float:
+    return a + b
+
+
+def suma1(a: int|float, b: int|float)-> int|float:
+# La línea indica que la variable puede 
+    return a + b
+if __name__ == "__main__":
+    print(suma(5,6))
+```
+
+
+### 12/09/2023
+
+Dentro de la carpeta llamda Webpage se encuentran estos archivos
+
+-Durante la clase, nos enseñaron la libreria _Streamlit_
+
+
+#### agendamain.py
+
+```
+from dataclasses import dataclass
+
+@dataclass #decorators
+
+#Definiendo la clase
+class User:
+    
+ id: str
+ name: str
+ age: int
+
+ def show_data():
+     return f"10: (id)\nNombre: (self.name)\nEdad: (self.age)"
+
+ #instancia
+if __name__ == "__main__":
+    usuario1 = User("1","Hugo",25)
+    usuario2 = User("1","Paco",25)
+    usuario3 = User("1","Luis",25)
+    usuario4 = User("1","Vladi",25)
+    usuarios = [usuario1, usuario2, usuario3, usuario4]
+    for usuario in usuarios:
+       print(usuario.show_data())
+
+```
+
+#### main.py
+
+```
+import streamlit as st
+
+# st.write("Hola ICI")
+
+st.sidebar.title("Calculadora ICI")
+
+def pedir_valores():
+    name = st.text_input("Nombre:")
+    n1 = st.number_input("Número 1:")
+    n2 = st.number_input("Número 2:")
+
+    if st.button("Sumar"):
+        st.succes("sumando...")
+        st.write(f"{n1} + {n2} = {n1 + n2}")
+
+opcion = st.sidebar.selectbox("Opciones:",[
+    "Suma", "Resta", "Multiplicación", "División", "A cerca de"
+    ])
+
+match opcion:
+    case "Suma":
+        st.write("Esta es la opcion de suma...")
+    case "Resta":
+        st.write("Esta es la opcion de Resta...")
+    case "Multiplicación":
+        st.write("Esta es la opcion de Multiplicación...")
+    case "División":
+        st.write("Esta es la opcion de División...")
+    case "A cerca de":
+        st.write("Derechos Reservados")
+        st.write("UCOL FIME ICI ")
+```
+
+#### operacionesmain.py
+
+```
+import milibreria.suma as lib
+import milibreria.resta as lib 
+
+from milibreria import suma,resta
+import milibreria as lib
+
+
+
+
+if __name__ == "__main__":
+    print(suma.suma(7,8))
+    print(resta.resta(8,4))
+
+# el main es el enter point del programa
+```
 
 
 
