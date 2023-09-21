@@ -1,5 +1,7 @@
 # Programacion-Funcional
 ## Tercer Semestre
+## Notas de clase
+
 
 En este semestre se dedicará al Lenguaje de Programación Python
 
