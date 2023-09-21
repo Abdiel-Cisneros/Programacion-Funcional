@@ -3,8 +3,8 @@ Tercer Semestre
 
 ## Primera Parcial
 
-'''
+```
 print("Hola mundo")
-'''
+```
 
 
