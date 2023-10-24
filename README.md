@@ -522,7 +522,642 @@ if __name__ == "__main__":
 # el main es el enter point del programa
 ```
 
+#-------------------------------------------
+## Segunda Parcial
 
+#-Notas de Jupiter 
+```
+def my_function(my_list=[]): #La lista no tiene argumentos
+    my_list.append('???')
+    return my_list
+```
+
+```
+my_function(["a","b","c"])
+```
+
+```
+global num
+num = 10
+#Python permite definir por fuera de las funciones, pero no significa que
+#sea una buena práctica, se debe de evitar
+
+def a():
+    print(num)
+    num=10
+
+def b():
+    y= num+10
+    print(y)
+
+a()
+b()
+
+num=10
+print(id(num))
+
+def c():
+    x= x+1
+    print(x)
+c()
+print(x)
+print(id(x))
+```
+
+```
+def double(x):
+    x*=2
+    print(x)
+    #return x
+
+x = 5
+x= double(x)
+x
+print(x)
+```
+
+```
+def double_lista(x):
+    i=0
+    while i < len(x):
+        x[1] *=2
+        i+=1
+    print(x)
+   
+a=[1,2,3,4,5]
+a= double_lista(a)
+a
+```
+
+```
+names = dict(name_1="Hugo",name_2="Paco",name_3="Luis")
+names
+```
+
+```
+def f():
+    return dict(name_1="Hugo",name_2="Paco",name_3="Luis")
+
+
+f()
+```
+
+```
+f()['Name_3']
+```
+
+```
+#Argumentos nombrados, argumentos posicionales obligatorios
+```
+
+```
+print("Hola")
+
+
+#! Argumentos de palabra Clave
+
+'''
+A partir del asterisco, todos los demás son nombrados o de llaves
+
+
+
+-Argumentos de llave o asterisco
+'''
+
+#? Diccionarios
+
+```
+
+### Clase del día 17 / 10 / 2023
+#### Se Creó una carpeta llamada "Calculadora"
+#### -Dentro de la carpeta hay un archivo llamado "__init__.py", la cual no contiene nada
+#### -Dentro de la carpeta está otro archivo llamado "Calculos.py" el cual contiene lo siguiente:
+
+```
+def suma(a,b):
+    """
+    Comentarios de la función suma
+    """
+    return a + b
+
+def resta(a,b):
+    return a - b
+
+def multiplicacion(a,b):
+    return a * b
+
+def division(a,b):
+    if b ==0:
+        raise ZeroDivisionError("division by zero")
+    return float(a/b)
+
+def cuadrado(a):
+    return a ** 2
+
+```
+
+#### Fuera de la carpeta de "Calculadora" se encuentra un archivo llamado "main_calculadora.py" la cual se utilizará para demostrar las distintas maneras de poder importar los archivos usando distintos modos, siendo uno de ellos es el alías para llamar de una manera en específica una función dentro del archivo, el * que nos sirve para importar todas las funciones o solamente importando la función del archivo que necesitamos para nuestro programa.
+
+```
+#import Calculadora.calculos as calc #alias
+
+#print(calc.suma.__doc__)
+#print(calc.suma(2,3))
+
+#------------------------------------------------------------------
+
+#from Calculadora import calculos
+
+#print(calculos.suma(2,3))
+#print(calculos.resta(2,3))
+#print(calculos.multiplicacion(2,3))
+#print(calculos.division(2,3))
+#print(calculos.cuadrado(2))
+
+#------------------------------------------------------------------
+
+#from Calculadora.calculos import *
+
+#print(suma(2,3))
+#print(resta(2,3))
+
+#------------------------------------------------------------------
+
+#from Calculadora.calculos import suma
+
+#print(suma(2,3))
+#print(resta(2,3))
+
+#------------------------------------------------------------------
+
+#from Calculadora.calculos import suma as sumar #Alias o sobrenombre  #Aka
+#from Calculadora.calculos import suma as restar
+
+#print(sumar(2,3))
+#print(restar(2,3))
+
+#------------------------------------------------------------------
+
+from Calculadora.calculos import suma as sumar, resta as restar
+
+#alias aka=as know as
+
+print(sumar(2,3))
+print(restar(2,3))
+```
+
+## -----Notas Jupiter de Classroom------
+
+### 2.1.4 Funciones como Objetos
+#### 2.1.4.1 Asignación de funciones a variables.
+##### Escriba una función double que obtenga el doble de un valor mediante el uso de una variable.
+
+```
+# Definir la función double
+def double(x:int)->int:
+    return x * 2
+
+# Asignar la función double a la variable my_double
+my_double = double
+print(type(my_double))
+
+# Llamar a la función a través de la variable
+result = my_double(5)
+
+# Imprimir el resultado
+print(result)
+```
+
+* Este programa define una función llamada `double` que toma un argumento `x` y devuelve el doble del mismo.
+* La función `double` se asigna a la variable `my_double`.
+* La función `my_double` se llama con el argumento 5 y el resultado se asigna a la variable `result`. 
+* Finalmente, el programa imprime el valor de `result` en la pantalla, que es el resultado de llamar a la función `double` con el argumento 5.
+
+#### 2.1.4.2 Paso de funciones como argumentos.
+
+##### Escriba un programa que mediante el uso de dos funciones: double() y cuad(), se pueda obtener el cuadrado del doble de un número entero. La función double debe ser usada como argumento de cuad.
+
+```
+def double(x:int)->int:
+    return x * 2
+
+# Llamar a la función a través de la variable
+doble = double(3)
+
+def cuad(f):
+    return f ** 2
+
+cuadrado = cuad(doble)
+print(cuadrado)
+
+```
+
+* Este programa define dos funciones, `double` y `cuad`
+* las utiliza para calcular el cuadrado del doble de un número. 
+* Primero, la función `double` multiplica su argumento por 2 y lo devuelve.
+* Luego, la función `cuad` toma un argumento `f` y devuelve el cuadrado de `f`.
+* El programa asigna la función `double` a la variable `my_double`, llama a `my_double` con el argumento 5 y asigna el resultado a la variable `doble`.
+* Finalmente, el programa llama a `cuad` con `doble` como argumento y asigna el resultado a la variable `cuadrado`, que se imprime en pantalla.
+
+##### Escriba ahora un programa que eleve una lista de números al cuadrado. La función se debe llamar elevar_numeros y debe recibir como argumento la lista y la función cuad, que es la que va a elevar el número al cuadrado.
+
+```
+def cuad(n:int)->int:
+    return n ** 2
+
+
+def elevar_numeros(lista, cuad):
+    lista_cuadrados = []
+    for num in lista:
+        lista_cuadrados.append(cuad(num))
+    return lista_cuadrados
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista, cuad))
+```
+
+
+
+```
+def cuad(n:int)->int:
+    return n ** 2
+
+
+def elevar_numeros(lista):
+    lista_cuadrados = []
+    for num in lista:
+        lista_cuadrados.append(cuad(num))
+    return lista_cuadrados
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista))
+
+```
+
+
+
+```
+def elevar_numeros(lista):
+    lista_cuadrados = []
+    for num in lista:
+        lista_cuadrados.append((lambda x: x **2)(num))
+    return lista_cuadrados
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista))
+
+```
+
+* Este programa define dos funciones, `cuad` y `elevar_numeros`, se utilizan para calcular el cuadrado de cada número en una lista.
+* La función `cuad` toma un argumento `n` y devuelve el cuadrado de `n`.
+* La función `elevar_numeros` toma una lista y una función como argumentos, y devuelve una lista que contiene el resultado de aplicar la función a cada elemento de la lista original.
+* En este caso, la función `elevar_numeros` llama a la función `cuad` para cada número en la lista y devuelve una lista de los cuadrados correspondientes.
+* El programa crea una lista de números del 1 al 5, llama a la función `elevar_numeros` con la lista y la función `cuad` como argumentos, y luego imprime la lista resultante de cuadrados en la pantalla.
+
+##### Escriba un programa que eleve a la potencia y cada uno de los elementos de una lista. Use la función elevar_números que reciba la lista y la potencia, y dentro de esta use la función potencia que se encargará de elevar a la potencia y cada elemento de la lista.
+
+```
+def potencia(x,y): #pow(x,y)
+    for _ in range(y):
+        x = x * y
+    return x
+
+
+def elevar_numeros(lista, y):
+    lista_potencias = []
+    for num in lista:
+        lista_potencias.append(pow(num,y))
+    return lista_potencias
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista, 2))
+
+```
+
+* Este programa define dos funciones: `potencia` y `elevar_numeros`
+* Permite elevar cada número en una lista a una potencia dada.
+* La función `potencia` toma dos argumentos, `x` y `y`, y devuelve `x` elevado a la potencia `y`.
+* La función utiliza un ciclo `for` para multiplicar `x` por `y` `y` veces.
+* La función `elevar_numeros` toma una lista y un número `y` como argumentos, y devuelve una lista que contiene el resultado de elevar cada elemento de la lista a la potencia `y`.
+* La función `elevar_numeros` llama a la función `potencia` para cada número en la lista y agrega el resultado a una nueva lista.
+* El programa crea una lista de números del 1 al 5, llama a la función `elevar_numeros` con la lista y el número 2 como argumentos, y luego imprime la lista resultante de números elevados al cuadrado en la pantalla.
+
+
+
+#### 2.1.4.3 Funciones anónimas (lambda functions).
+
+Las funciones lambda en Python son funciones anónimas que se pueden definir en una sola línea de código. 
+
+- Las funciones lambda:
+    * se definen utilizando la palabra clave `lambda`, seguida de los argumentos de la función separados por comas y luego dos puntos.
+    * es una expresión que se evalúa y devuelve como resultado.
+    - son funciones anónimas, lo que significa que no tienen un nombre definido.
+    - se pueden asignar a una variable y luego llamar a través de esa variable.
+    - se utilizan comúnmente como argumentos de otras funciones, como `map()`, `filter()`, `reduce()`, etc.
+    - son útiles para escribir código más conciso y legible (cuando se trabaja con funciones simples y de una sola línea)
+
+```
+def identity(x):
+    return x
+
+print(identity(3))
+```
+
+```
+lambda x: x
+#print((lambda x: x*2)(5))
+y = lambda x: x
+y(5)
+```
+
+```
+cuadrado = lambda x: x+1
+cuadrado(3)
+```
+
+```
+lambda x: x + 1
+```
+
+```
+(lambda x: x + 1)(2)
+```
+
+```
+# puede ser nombrada
+add_one = lambda x: x + 1
+add_one(2)
+```
+
+```
+def add_one(x):
+    return x + 1
+```
+
+```
+(lambda x,y: x/y)(10,y=1)
+
+def division(x,y=1):
+    return x/y
+ 
+ 
+division(5)   
+```
+
+### 2.1.5 Recursión
+
+#### 2.1.5.1 Definición de funciones recursivas.
+
+* Una definición recursiva es aquella en la que el término definido aparece en la propia definición.
+* Capacidad de una función de llamarse a sí misma
+* La mayoría de los problemas de programación se pueden resolver sin recursividad. 
+* Entonces... la recursividad no suele ser necesaria.
+--------
+* El recorrido de estructuras de datos en forma de árbol es un ejemplo.
+* Debido a que se trata de estructuras anidadas, se ajustan fácilmente a una definición recursiva.
+* Es probable que un algoritmo no recursivo para recorrer una estructura anidada sea algo burdo.
+* Una solución recursiva puede ser más elegante y eficiente.
+
+```
+def f():
+    x = 10
+    f()
+```
+
+```
+f()
+```
+
+```
+# Para conocer el límite de recursión
+import sys
+print(sys.getrecursionlimit())
+```
+
+```
+from sys import getrecursionlimit
+print(getrecursionlimit())
+```
+
+```
+# Se puede modificar el límite de recursión
+sys.setrecursionlimit(500)
+```
+
+```
+f()
+```
+
+* Las funciones recursivas suelen un patrón:
+    * Hay uno o más casos base que se pueden resolver directamente sin necesidad de más recursividad.
+    * Cada llamada recursiva acerca progresivamente la solución a un caso base (mecanismo de retorno).
+
+
+#### 2.1.5.2 Casos base y casos recursivos.
+
+* Ejemplo: Cuenta regresiva hasta cero
+
+```
+# cuenta regresiva no recursiva (iterativa)
+def cuenta_regresiva(n):
+    while n >= 0:
+        print(n)
+        n -= 1
+
+cuenta_regresiva(5)
+```
+
+```
+# cuenta regresiva recursiva
+def cuenta_regresiva(n):
+    print(n)
+    if n == 0:
+        return                      # Fin de la recursión, caso base
+    else:
+        cuenta_regresiva(n - 1)     # Llamada recursiva
+
+
+cuenta_regresiva(5)
+```
+
+* El caso base se produce cuando n es cero, momento en el que se detiene la recursividad.
+* En la llamada recursiva, el argumento es uno menos que el valor actual de n, por lo que cada recursividad se acerca al caso base.
+
+* Ejemplo: Calcular el factorial
+
+```
+# Función factorial no recursiva (iterativa)
+def factorial(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+```
+
+```
+# función factorial recursiva
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+```
+
+```
+def factorial(n):
+    return 1 if n <= 1 else n * factorial(n - 1)
+
+
+print(factorial(5))
+```
+
+```
+def factorial(n):
+    print(f"factorial() llamado con n = {n}")
+    return_value = 1 if n <= 1 else n * factorial(n -1)
+    print(f"-> factorial({n}) retorna {return_value}")
+    return return_value
+
+
+factorial(5)
+```
+
+* Calcular el tiempo de ejecución (evaluación empírica)
+* timeit(<command>, setup=<setup_string>, number=<iterations>)
+
+```
+# Ejemplo iterativo
+from timeit import timeit
+
+timeit("print(string)", setup="string='Hola Mundo'", number=100)
+```
+
+
+```
+# Performance algoritmo factorial iterativo
+from timeit import timeit
+
+setup_string = """
+print("Iterativo:")
+def factorial(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+"""
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10000000)
+```
+
+```
+# Performance algoritmo factorial iterativo recursivo
+from timeit import timeit
+
+setup_string = """
+print("Recursive:")
+def factorial(n):
+    return 1 if n <= 1 else n * factorial(n - 1)
+"""
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10_000_000)
+```
+
+```
+#Usando reduce
+setup_string = """
+from functools import reduce
+print("reduce():")
+def factorial(n):
+    return reduce(lambda x, y: x * y, range(1, n + 1) or [1])
+"""
+
+from timeit import timeit
+timeit("factorial(5)", setup=setup_string, number=10000000)
+```
+
+```
+# Python ya tiene una función factorial
+from math import factorial
+factorial(4)
+```
+
+```
+setup_string = "from math import factorial"
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10_000_000)
+```
+
+###-----------------------------------------------------------------------------------
+### 2.1.6 Documentación y Comentarios
+#### 2.1.6.1 Uso de docstrings para documentar funciones.
+
+```
+def suma(a, b):
+    """
+    This function adds two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The sum of a and b.
+    """
+    return a + b
+
+def resta(a, b):
+    """
+    This function subtracts two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The difference between a and b.
+    """
+    return a - b
+
+def multiplicacion(a, b):
+    """
+    This function multiplies two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The product of a and b.
+    """
+    return a * b
+
+def division(a, b):
+    """
+    This function divides two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    float: The quotient of a and b.
+    """
+    return a / b
+
+```
+
+```
+print(suma.__doc__)
+```
 
 
 
