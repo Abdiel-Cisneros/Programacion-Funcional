@@ -1159,5 +1159,100 @@ def division(a, b):
 print(suma.__doc__)
 ```
 
+#### 2.1.6.2 Comentarios relevantes en el código.
+
+```
+def suma(a, b):
+    """
+    This function adds two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The sum of a and b.
+    """
+    # Check if both a and b are integers
+    if not isinstance(a, int) or not isinstance(b, int):
+        print("Both a and b should be integers.")
+        return None
+    
+    # Add a and b
+    result = a + b
+    
+    # Print the result
+    print(f"The sum of {a} and {b} is {result}.")
+    
+    return result
+
+```
+
+```
+print(suma(1.0,5))
+```
+
+### 2.1.7 Módulos y Organización:**
+
+#### 2.1.7.1 Creación de módulos con funciones.
+1. Crear la carpeta calculadora
+2. Crear el archivo __init__.py
+3. Crear el archivo que tendrá las funciones: calculos.py
+4. Crear las funciones dentro de calculos.py
+
+#### 2.1.7.2 Importación de funciones desde módulos.
+
+### 2.1.8 Pruebas y Depuración:
+
+```
+
+#import unittest
+
+
+def suma(a, b):
+    """
+    This function adds two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The sum of a and b.
+    """
+    return a + b
+
+def resta(a, b):
+    """
+    This function subtracts two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The difference between a and b.
+    """
+    return a - b
+
+assert suma(2, 3) == 5.0, "debería ser 5"
+assert suma(-2, 3) == 1, "debería ser 1"
+assert suma(0, 0) == 0, "debería ser 0"
+assert suma(-3,-3) == -6, "debería ser -6"
+    
+assert resta(2, 3) == -1, "debería ser -1"
+assert resta(-2, 3) == -5, "debería ser -5"
+assert resta(0, 0) == 0, "debería ser 0"
+        
+```
+
+
+
+
+
+
+
+
+
 
 
