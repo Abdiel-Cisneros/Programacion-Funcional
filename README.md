@@ -522,7 +522,7 @@ if __name__ == "__main__":
 # el main es el enter point del programa
 ```
 
-#-------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Segunda Parcial
 
 #-Notas de Jupiter 
@@ -629,7 +629,7 @@ A partir del asterisco, todos los demás son nombrados o de llaves
 ```
 
 ### Clase del día 17 / 10 / 2023
-#### Se Creó una carpeta llamada "Calculadora"
+#### Se creó una carpeta llamada "Calculadora"
 #### -Dentro de la carpeta hay un archivo llamado "__init__.py", la cual no contiene nada
 #### -Dentro de la carpeta está otro archivo llamado "Calculos.py" el cual contiene lo siguiente:
 
@@ -656,7 +656,7 @@ def cuadrado(a):
 
 ```
 
-#### Fuera de la carpeta de "Calculadora" se encuentra un archivo llamado "main_calculadora.py" la cual se utilizará para demostrar las distintas maneras de poder importar los archivos usando distintos modos, siendo uno de ellos es el alías para llamar de una manera en específica una función dentro del archivo, el * que nos sirve para importar todas las funciones o solamente importando la función del archivo que necesitamos para nuestro programa.
+#### Fuera de la carpeta de "Calculadora" se encuentra un archivo llamado "main_calculadora.py" la cual se utilizará para demostrar las distintas maneras de poder importar los archivos usando distintos modos, siendo uno de ellos es el alías para llamar de una manera en específica una función dentro del archivo, el * que nos sirve para importar todas las funciones, también se puede solamente importando la función del archivo que necesitamos para nuestro programa.
 
 ```
 #import Calculadora.calculos as calc #alias
